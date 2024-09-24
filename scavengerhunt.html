@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timisoara Scavenger Hunt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 50px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .text-content {
+            font-size: 20px;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .next-button {
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #218838;
+        }
+		
+		.square-container {
+            display: flex;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .white {
+            background-color: white;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+		
+    </style>
+</head>
+<body>
+
+    <div class="container" id="content">
+        <!-- Starting screen (1) -->
+        <h1>Welcome to Timisoara</h1>
+        <img src="https://facts.net/wp-content/uploads/2023/07/43-facts-about-timisoara-1689325160.jpeg" alt="Timisoara, Romania">
+        <h2>Your mission:</h2>
+		<h1>Save Timisoara!</h1>
+		<h2>A bomb is set to go off in just 30 minutes!</h2>
+		<h2>Only by completing the scavenger hunt and answering
+            the final question can you defuse it in time.</h2>
+		<h2>The clock is ticking – the fate of the city is in your hands!</h2>
+        <button class="next-button" onclick="nextScreen()">Start the Hunt</button>
+    </div>
+
+    <script>
+        function nextScreen() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 2: Why Timisoara is the best -->
+                <h2>
+                    Timisoara, often called the "City of Flowers," is one of the most vibrant and historically significant cities in Romania. 
+                    </br></br>Known for its diverse culture, beautiful architecture, and numerous green spaces, Timisoara offers something for everyone. 
+                    </br></br>It is a city of innovation and history, being the first European city to have electric street lighting. 
+					</br></br>Its charming blend of old and new makes Timisoara a perfect destination for exploring culture, art, and history.
+                </h2>
+                <button class="next-button" onclick="nextScreen3()">Next</button>
+            `;
+        }
+
+        function nextScreen3() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 3: Orthodox Cathedral -->
+                <h1>The Most Famous Orthodox Cathedral</h1>
+                <p class="text-content">
+                    One of the most iconic landmarks in Timisoara is the Orthodox Cathedral, known for its stunning architecture and impressive size. 
+                    This grand cathedral, located in Victory Square, dominates the skyline with its tall spires and intricate brickwork. It’s not only 
+                    a spiritual symbol but also a representation of Timisoara’s deep cultural and historical roots.
+                </p>
+                <img src="https://www.opiniatimisoarei.ro/wp-content/uploads/2017/09/timisoara-centru-catedrala-victoriei-728x336.jpg" alt="Orthodox Cathedral in Timisoara">
+                <button class="next-button" onclick="nextScreen4()">Next</button>
+            `;
+        }
+
+        function nextScreen4() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 4: Question about the benches -->
+                <h1>The Adventure Begins!</h1>
+                <p class="text-content">
+                    You are in front of the Cathedral facing the city. You must cross the street for the first Question!
+                </p>
+				</br>
+				<h1>#1 Question:</h1>
+                <p class="text-content">How many benches are there?</p>
+				</br>
+				</br>
+                <input type="password" id="answer4" placeholder="Enter the number of benches" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer4()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer4() {
+            const answer = document.getElementById('answer4').value;
+            if (answer === '8') {
+                nextScreen5();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen5() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 5: Szechenyi Palace -->
+				<h2>On your left, that building is</h2>
+                <h1>Szechenyi Palace</h1>
+                <p class="text-content">
+                    Szechenyi Palace is an architectural jewel located in Timisoara. Built in the early 20th century, it features a blend of Art Nouveau and Neo-Baroque styles. The palace is known for its decorative details, intricate façade, and historical significance in the city’s development.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Palatul_Szechenyi_1.jpg" alt="Szechenyi Palace">
+                <button class="next-button" onclick="nextScreen6()">Next</button>
+            `;
+        }
+
+        function nextScreen6() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 6: Hilt Palace -->
+                <h1>Hilt Palace</h1>
+                <p class="text-content">
+                    Hilt Palace is another historic building in Timisoara, renowned for its unique architecture that combines elements of Neo-Renaissance and Art Nouveau. Built in the early 1900s, it remains a significant part of the city's heritage, attracting both locals and tourists alike.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Palatul_Hilt-Vogel.jpg" alt="Hilt Palace">
+                <button class="next-button" onclick="nextScreen7()">Next</button>
+            `;
+        }
+
+        function nextScreen7() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 7: Victory Square -->
+                <h1>Victory Square</h1>
+                <p class="text-content">
+                    Victory Square is the central square in Timisoara, known for its historical importance and vibrant cultural atmosphere. It is surrounded by beautiful buildings, including the Opera House and the Orthodox Metropolitan Cathedral. The square has been the site of many significant events, including the Romanian Revolution of 1989.
+                </p>
+                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/129000/129816-Timisoara.jpg" alt="Victory Square">
+                <button class="next-button" onclick="nextScreen8()">Next</button>
+            `;
+        }
+
+        function nextScreen8() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 8: Question about the clock -->
+                <p class="text-content">
+                    You are in Victory Square near the Fish Fountain.
+                </p>
+				</br>
+				<h1>#2 Question</h1>
+				</br>
+				</br>
+                <h2>I have no mouth and no nose, but I do have a face. I also have two hands but no legs and no toes. What am I?</h2>
+                </br>
+				<input type="password" id="answer8" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer8()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer8() {
+            const answer = document.getElementById('answer8').value.toLowerCase();
+            if (answer === 'clock') {
+                nextScreen9();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen9() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 9: Statue with wolf -->
+				<h2>Now go to the clock! Then turn around.</h2>
+                <p class="text-content">
+                    On your left, you can see a statue with a wolf feeding two kids.
+                </p>
+				<h1>The Capitoline Wolf statue</h1>
+				<p>is a symbol of ancient Rome. It represents the legendary scene of the she-wolf suckling Romulus and Remus, the twin founders of Rome. A similar statue can be found in many cities across Europe, including Timisoara.</p>
+                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/130000/130138-Piata-Operei.jpg" alt="Statue of Romulus and Remus">
+                <button class="next-button" onclick="nextScreen10()">Next</button>
+            `;
+        }
+
+        function nextScreen10() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 10: Loffler Palace -->
+                <p class="text-content">
+                    In front of the statue, you have 
+                </p>
+				 <h1>The Loffler Palace</h1>
+				<p>The Loffler Palace is a beautiful building in Timisoara that showcases the Secessionist architectural style. It was built in the early 20th century and is known for its intricate façade and historical significance.</p>
+                <img src="https://www.gpsmycity.com/img/gd_sight/36694.jpg" alt="The Loffler Palace">
+                <button class="next-button" onclick="nextScreen11()">Next</button>
+            `;
+        }
+
+        function nextScreen11() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 11: Dauerbach Palace -->
+                <h1>The Dauerbach Palace</h1>
+                <p>
+                    The Dauerbach Palace is an iconic building located in the heart of Timisoara. Built in the early 1900s, its architecture blends Art Nouveau with classicist influences, making it a remarkable landmark.
+                </p>
+                <img src="https://heritageoftimisoara.ro/storage/3378/conversions/DSC_0041_resized3000-featured.jpg" alt="The Dauerbach Palace">
+                <button class="next-button" onclick="nextScreen12()">Next</button>
+            `;
+        }
+
+        function nextScreen12() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 12: Merbl Palace + Dove interaction -->
+                <h1>The Merbl Palace</h1>
+                <p>
+                    The Merbl Palace, a stunning example of Secessionist architecture, is located in Timisoara's central square. Built in the early 20th century, its design is noted for its elegance and historical importance to the city.
+                </p>
+                <img src="https://heritageoftimisoara.ro/storage/3325/conversions/DJI_0756-medium.jpg" alt="The Merbl Palace">
+                <p class="text-content">
+                    Walk straight until you see doves! And yes, you can play with the doves – they are friendly! But hurry, because you still need to save the City!
+                </p>
+                <button class="next-button" onclick="nextScreen13()">Next</button>
+            `;
+        }
+
+        function nextScreen13() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 13: Question about the Revolution -->
+				<img src="https://www.romaniajournal.ro/wp-content/uploads/2019/12/revolutie-TM.jpg">
+				</br>
+                <h1>#3 Question</h1>
+				</br>
+                <h2>What famous event happened here in 1989?</h2>
+				</br>
+				</br>
+                <input type="password" id="answer13" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer13()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer13() {
+            const answer = document.getElementById('answer13').value.toLowerCase();
+            if (answer === 'the revolution') {
+                nextScreen14();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen14() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 14: Opera of Timisoara -->
+                <h1>The Opera of Timisoara</h1>
+                <p class="text-content">
+                    The Timisoara National Opera is one of the city's iconic landmarks. Built in the 19th century, it is not only an architectural beauty but also a hub for cultural events, including operas, ballets, and symphonic concerts. Its impressive façade faces the Victory Square.
+                </p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Opera_Na%C8%9Bional%C4%83_Rom%C3%A2n%C4%83_din_Timi%C8%99oara_%28April_-_2023%29.jpg" alt="The Opera House">
+                <button class="next-button" onclick="nextScreen15()">Next</button>
+            `;
+        }
+
+        function nextScreen15() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 15: Colorful Umbrellas and Liberty Square -->
+                <h1>The Colorful Umbrellas</h1>
+                <img src="https://i.pinimg.com/originals/53/e3/f0/53e3f01fff35230382cc9746cfc086a0.jpg" alt="Colorful Umbrellas in Timisoara">
+                <p class="text-content">
+                    When you see them, walk straight on that street until you arrive in another Square, The Liberty Square :) There you must find the statue of a child 
+                    holding his hand to his head like he's talking on the phone.
+                </p>
+				</br>
+				<h1>#4 Question</h1>
+                <h2>What color is the statue?</h2>
+				</br>
+                <input type="password" id="answer15" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				<button class="next-button" onclick="checkAnswer15()">Submit Answer</button>
+            `;
+        }
+		
+		function checkAnswer15() {
+            const answer = document.getElementById('answer15').value.toLowerCase();
+            if (answer === 'black') {
+                nextScreen16();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+		
+	
+        // Starting on screen 16
+        function nextScreen16() {
+            document.getElementById('content').innerHTML = `
+                <h1>The Liberty Square</h1>
+                <p class="text-content">
+                    Liberty Square is one of the historic squares in Timisoara, showcasing beautiful architecture and a rich history. It’s a perfect blend of old-world charm and vibrant city life.
+                </p>
+				</br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Temi%C5%A1var%2C_Rumunija_22.jpg/1200px-Temi%C5%A1var%2C_Rumunija_22.jpg" alt="Liberty Square">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="nextScreen17()">Next</button>
+            `;
+        }
+		
+
+        function nextScreen17() {
+            document.getElementById('content').innerHTML = `
+                <p class="text-content">
+                    You are in front of the statue facing it. Now go to your left and cross the street. Be careful when crossing the street. Now go straight, you have to walk a bit, until you arrive at another Square :)
+                </p>
+				<h1>Union Square</h1>
+                <p class="text-content">
+                    Union Square is a central location in Timisoara, filled with history, beautiful architecture, and lively energy. 
+                    It is known for its Baroque buildings, grand facades, and rich historical background.</p>
+                <img src="https://www.impactpress.ro/wp-content/uploads/2023/02/Piata-Unirii-din-Timisoara.jpeg" alt="Union Square">
+                </br>
+				<button class="next-button" onclick="nextScreen18()">Next</button>
+            `;
+        }
+
+        function nextScreen18() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 18:  Question -->
+                <h1>#5 Question</h1>
+				<h2>When the Wind blows, I wave to you. Sometimes I am red, yellow, and blue. What am I?</h2>
+				</br>
+				<input type="password" id="answer18" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer18()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer18() {
+            const answer = document.getElementById('answer18').value.toLowerCase();
+            if (answer === 'flag') {
+                nextScreen19();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen19() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 19: Flag Question -->
+                <h1>Now find the flag!</h1>
+                <p class="text-content">Look to your left and find the flag!</p>
+                <h1>#6 Question</h1>
+				<h2>What color is the building where you see the flag?</h2>
+				</br>
+                <input type="password" id="answer19" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer19()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer19() {
+            const answer = document.getElementById('answer19').value.toLowerCase();
+            if (answer === 'white') {
+                nextScreen20();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen20() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 20: Serbian Orthodox Episcopal Palace -->
+                <h1>Serbian Orthodox Episcopal Palace</h1>
+                <p class="text-content">
+                    The Serbian Orthodox Episcopal Palace is one of Timisoara's most iconic and historically significant buildings, reflecting the city's cultural diversity.
+                </p>
+                <img src="https://heritageoftimisoara.ro/storage/2167/conversions/HOT-95-medium.jpg" alt="Serbian Orthodox Episcopal Palace">
+                <button class="next-button" onclick="nextScreen21()">Next</button>
+            `;
+        }
+
+        function nextScreen21() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 21: Find the clue with squares -->
+                <h1>Find this</h1>
+                <div class="square-container">
+                   <div class="square red"></div>
+                   <div class="square white"></div>
+                   <div class="square orange"></div>
+                   <div class="square yellow"></div>
+                </div>
+                <p class="text-content" style="font-weight: bold;">Find this</p>
+                <h1>#7 Question</h1>
+				<h2>How many windows are here?</h2>
+				</br>
+				</br>
+                <input type="password" id="answer21" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer21()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer21() {
+            const answer = document.getElementById('answer21').value;
+            if (answer === '26') {
+                nextScreen22();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen22() {
+            document.getElementById('content').innerHTML = `
+                <!-- Screen 22: The Houses of the Canons -->
+                <h1>The Houses of the Canons</h1>
+                <p class="text-content">
+                    The Houses of the Canons are historic buildings that represent the baroque architectural style and house important religious figures.
+                </p>
+				</br>
+                <img src="https://live.staticflickr.com/3747/32676161343_031887c44b_h.jpg" alt="The Houses of the Canons">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="nextScreen23()">Next</button>
+            `;
+        }
+
+        function nextScreen23() {
+            document.getElementById('content').innerHTML = `
+                <p class="text-content">
+                    You are facing The Houses of the Canons,Turn right and you can see
+                </p>
+				<h1>St. George's Roman Catholic Cathedral</h1>
+				<p>A majestic structure that plays a key role in Timisoara’s religious and architectural history.</p>
+                </br>
+				<img src="https://roamingromania.com/wp-content/uploads/2018/12/catedrala-sfantul-gheorghe-timisoara.jpg" alt="St. George's Roman Catholic Cathedral">
+                </br>
+                </br>
+				<button class="next-button" onclick="nextScreen24()">Next</button>
+            `;
+        }
+
+        function nextScreen24() {
+            document.getElementById('content').innerHTML = `
+                <h1>#8 Question</h1>
+                <h2>
+                    The past is contained 
+					<br>
+					within a construction.
+					<br>
+                    There's culture or knowledge 
+					<br>
+					primed for instruction.
+					<br>
+                    Where is this?
+                </h2>
+                </br>
+                <input type="password" id="answer24" placeholder="Enter your answer">
+                </br>
+                </br>
+                </br>
+                <button class="next-button" onclick="checkAnswer24()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer24() {
+            const answer = document.getElementById('answer24').value.toLowerCase();
+            if (answer === 'museum') {
+                nextScreen25();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen25() {
+            document.getElementById('content').innerHTML = `
+                <h2>Go to the Museum!</h2>
+                <h1>The Art Museum</h1>
+                <p class="text-content">
+                    The Art Museum of Timisoara is housed in a beautiful historical building and features a vast collection of paintings, sculptures, and other artwork from various periods.
+                </p>
+				</br>
+                <img src="https://image.wmsm.co/1d13f1ec005ab32918364f0a35314f4a/muzeul-de-arta-timisoara-1.jpg?quality=80&width=1280" alt="The Art Museum">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="nextScreen26()">Next</button>
+            `;
+        }
+
+        function nextScreen26() {
+            document.getElementById('content').innerHTML = `
+                <p class="text-content">
+                    While facing the Museum, look to your right at the colorful building.
+                </p>
+                <h2>Bruck House</h2>
+                <p class="text-content">
+                    Bruck House is one of the most iconic buildings in Timisoara’s Union Square, showcasing an art nouveau architectural style with its colorful facade.
+                </p>
+                <img src="https://www.gonext.ro/wp-content/uploads/2022/04/PALATUL-BRUCK-foto-timisoara.jpg" alt="Bruck House">
+                <button class="next-button" onclick="nextScreen27()">Next</button>
+            `;
+        }
+
+        function nextScreen27() {
+            document.getElementById('content').innerHTML = `
+                <img src="https://images.cazare.online/attractions/1331/large/ZXuP4P_7519adf9a498f33d2d40b4159bb12971.jpg" alt="Tip of Holy Trinity Statue">
+				<h1>Find this!</h1>
+				<h1>#9 Question</h1>
+                <p class="text-content">In what part of the Square is it located?</p>
+				</br>
+                <input type="password" id="answer27" placeholder="Enter your answer">
+                </br>
+				</br>
+				</br>
+				<button class="next-button" onclick="checkAnswer27()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer27() {
+            const answer = document.getElementById('answer27').value.toLowerCase();
+            if (answer === 'center') {
+                nextScreen28();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen28() {
+            document.getElementById('content').innerHTML = `
+                <h1>Holy Trinity Monument</h1>
+                <p class="text-content">
+                    The Holy Trinity Monument was built to commemorate the victims of the plague and to protect the city from future epidemics.
+                </p>
+                <img src="https://www.opiniatimisoarei.ro/wp-content/gallery/monumentul-ciumei-piata-unirii-coroana-foita-de-aur/statuie-piata-unirii-2_0.jpg" alt="Holy Trinity Monument">
+                <button class="next-button" onclick="nextScreen29()">Next</button>
+            `;
+        }
+
+        function nextScreen29() {
+            document.getElementById('content').innerHTML = `
+                <h1>This is the last Question to stop the BOMB!</h1>
+                <p class="text-content">
+                    Answer this correctly,
+					</br>
+					and you saved the City!
+					</br>
+					<h1>#10 Question</h1>
+                    <h2>How do you say "I LOVE TIMISOARA" in Romanian?</h2>
+					</br>
+                </p>
+                <input type="password" id="answer29" placeholder="Enter your answer">
+				</br>
+				</br>
+                <button class="next-button" onclick="checkAnswer29()">Submit Answer</button>
+            `;
+        }
+
+        function checkAnswer29() {
+            const answer = document.getElementById('answer29').value.toUpperCase();
+            if (answer === 'EU IUBESC TIMISOARA') {
+                nextScreen30();
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextScreen30() {
+            document.getElementById('content').innerHTML = `
+                <h1>YOU MADE IT! YOU SAVED THE CITY!</h1>
+                <p class="text-content">Congratulations on completing the Timisoara Scavenger Hunt!</p>
+                <img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/T812A2PA4267PT17X37Y95D1037413415W27316H9621/views/1,width=550,height=550,appearanceId=2,backgroundColor=000000,noPt=true/i-love-timioara-rumania-mens-premium-t-shirt.jpg" alt="I LOVE TIMISOARA">
+                <p class="text-content">YOU LOVE TIMISOARA! YOU COMPLETED THE TIMISOARA SCAVENGER HUNT!</p>
+            `;
+        }
+        
+    </script>
+
+</body>
+</html>
