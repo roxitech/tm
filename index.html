@@ -405,7 +405,7 @@
             document.getElementById('content').innerHTML = `
                 <!-- Screen 18:  Question -->
                 <h1>Question #5</h1>
-				<h2>When the Wind blows, I wave to you. Sometimes I am red, yellow, and blue. What am I?</h2>
+				<h2>At the top of this building, you'll notice a Cross, but it's neither a church nor a statue. Find the building and head over there. What color is the upper part of it?</h2>
 				</br>
 				<input type="password" id="answer18" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
                 </br>
@@ -417,7 +417,7 @@
 
         function checkAnswer18() {
             const answer = document.getElementById('answer18').value.toLowerCase();
-            if (answer === 'flag') {
+            if (answer === 'white') {
                 nextScreen19();
             } else {
                 alert("Incorrect! Try again.");
@@ -426,11 +426,10 @@
 
         function nextScreen19() {
             document.getElementById('content').innerHTML = `
-                <!-- Screen 19: Flag Question -->
-                <h1>Now find the flag!</h1>
-                <p class="text-content">Look to your left and find the flag!</p>
+                <!-- Screen 19 -->
+                <p class="text-content">You are in front of that building,facing it! You turn right.</p>
                 <h1>Question #6</h1>
-				<h2>What color is the building where you see the flag?</h2>
+				<h2>What color is the second building on the left?</h2>
 				</br>
                 <input type="password" id="answer19" placeholder="Enter your answer" style="padding: 10px; font-size: 16px;">
                 </br>
@@ -442,7 +441,7 @@
 
         function checkAnswer19() {
             const answer = document.getElementById('answer19').value.toLowerCase();
-            if (answer === 'white') {
+            if (answer === 'blue') {
                 nextScreen20();
             } else {
                 alert("Incorrect! Try again.");
